@@ -1,4 +1,4 @@
-#Código que ainda precisa ser melhorado
+#Crie um programa que contêm uma função que receba dois parâmetros inteiros e retorna a média dos dois valores
 
 def media(par1, par2):
     

@@ -6,7 +6,7 @@ import statistics
 valores = []
 valoresPares = []
 
-for i in range(4):
+for i in range(20):
     valores.append(int(input("Digite um número: ")))
 for num_valores in valores:
     if num_valores % 2 == 0:
