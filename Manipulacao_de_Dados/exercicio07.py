@@ -1,3 +1,5 @@
+'''Percorra o JSON 2, utilizando o loop FOR e printe suas chaves principais.'''
+
 import json
 
 def printJson():
@@ -7,3 +9,5 @@ def printJson():
 
 json2 = printJson()
 
+for dados in json2:
+    print(dados)

@@ -1,3 +1,5 @@
+'''Do JSON 1 Guarde apenas o Nome do Estádio, o Placar e o Status do jogo dentro de variáveis e mostre-as'''
+
 import json
 
 def printJson():

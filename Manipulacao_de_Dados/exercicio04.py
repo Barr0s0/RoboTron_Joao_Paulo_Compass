@@ -1,3 +1,5 @@
+'''No JSON 1 printe todas as chaves e valores do time visitante'''
+
 import json
 
 def printJson():

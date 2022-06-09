@@ -1,3 +1,5 @@
+'''Guarde o arquivo JSON 2 nomeando-o como campeonato em uma variável e printe todos os seus dados'''
+
 import json
 
 def printJson():

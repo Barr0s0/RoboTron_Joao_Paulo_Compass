@@ -1,3 +1,5 @@
+'''Pegue o arquivo JSON 1 e printe apenas o nome do time vencedor no terminal'''
+
 import json
 
 def printJson():
