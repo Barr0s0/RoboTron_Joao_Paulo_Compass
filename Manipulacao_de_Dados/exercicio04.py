@@ -1,7 +1,9 @@
+'''No JSON 1 printe todas as chaves e valores do time visitante'''
+
 import json
 
 def printJson():
-    with open(r"C:\Users\joao_\Documents\RoboTron_Joao_Paulo_Compass\arquivos json\partida.json", encoding="utf-8") as json_normal:
+    with open("./../arquivos_json/partida.json", encoding="utf-8") as json_normal:
         json_manipulavel = json.load(json_normal)
         return json_manipulavel
 
