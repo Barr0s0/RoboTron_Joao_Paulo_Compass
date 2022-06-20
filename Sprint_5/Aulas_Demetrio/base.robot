@@ -17,17 +17,16 @@ Cenario: GET todos os usuarios 200
 
 Cenario: Nome do cenario 200
     Criar Sessao
-    POST Endpoint
-
+    
 #SESSÃO PARA CRIAÇÃO DE KEYWORDS PERSONALIZADAS
 
 * Keywords * 
 Criar Sessao
     Create Session          serverest   https://serverest.dev
 
-GET Endpoint/usuarios
+GET Endpoint /usuarios
     ${response}             GET on Session      serverest       /usuarios
     Set Global Variable     ${response}
 
-Validar Status Code "200"${statuscode}
+Validar Status Code "${statuscode}"
     Should Be True      ${response.status_code} == ${statuscode}
