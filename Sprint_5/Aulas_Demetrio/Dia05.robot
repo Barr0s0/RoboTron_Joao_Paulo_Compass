@@ -28,6 +28,11 @@ Cenario: PUT Atualizar Usuario 200
     PUT Endpoint /usuarios
     Validar Status Code "200"
 
+Cenario: DELETE Deletar Usuario 200
+    Criar Sessao
+    DELETE Endpoint /usuarios
+    Validar Status Code "200"
+
 #SESSÃO PARA CRIAÇÃO DE KEYWORDS PERSONALIZADAS
 
 * Keywords * 
@@ -39,16 +44,22 @@ GET Endpoint /usuarios
     Set Global Variable     ${response}
 
 POST Endpoint /usuarios
-   &{payload}              Create Dictionary   nome=Bruno da Silva   email=BruBru@qa.com.br   password=tester    administrador=true
+    &{payload}              Create Dictionary   nome=Otavioos da Silva   email=Otavasio@qa.com.br   password=testerasd    administrador=true
     ${response}             POST on Session      serverest       /usuarios  data=&{payload}
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
 PUT Endpoint /usuarios
-    &{payload}              Create Dictionary   nome=joao paulo barroso   email=joaoo.barroso@qa.com.br   password=testejoao   administrador=true
-    ${response}             PUT on Session      serverest       /usuarios/USbdVQ0c7W2pwylY      data=&{payload}
+    &{payload}              Create Dictionary   nome=jooooaooo pauloo barrosoo   email=joaooooo.barros@qa.com.br   password=testejoao   administrador=true
+    ${response}             PUT on Session      serverest       /usuarios/ABAgQLlQpRg7ndEy      data=&{payload}
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
+
+DELETE Endpoint /usuarios
+    ${response}             DELETE on Session      serverest       /usuarios/ABAgQLlQpRg7ndEy      
+    Log to Console          Response: ${response.content}
+    Set Global Variable     ${response}
+
 
 Validar Status Code "${statuscode}"
     Should Be True      ${response.status_code} == ${statuscode}
