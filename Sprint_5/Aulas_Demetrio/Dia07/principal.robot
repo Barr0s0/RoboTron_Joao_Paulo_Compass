@@ -1,6 +1,5 @@
 * Settings *
 Documentation   Arquivo simples para requisições HTTP
-Library         RequestsLibrary
 Resource        ./usuarios_keywords.robot
 Resource        ./login_keywords.robot
 Resource        ./produtos_keywords.robot
@@ -47,8 +46,17 @@ Cenario: POST Realizar Login 200
 Cenario: POST Criar Produtos 201
     [tags]      POSTPRODUTO
     Criar Sessao
+    Fazer Login e Armazenar Token
     POST Endpoint /produtos
     Validar Status Code "201"
+
+Cenario: DELETE Excluir Produto 200
+    [tags]      DELETEPRODUTO
+    Criar Sessao
+    Fazer Login e Armazenar Token
+    Criar Um Produto e Armazenar ID
+    DELETE Endpoint /produtos
+    Validar Status Code "200"
 
 * Keywords *
 

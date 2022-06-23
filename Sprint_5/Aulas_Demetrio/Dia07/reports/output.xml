@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220623 17:01:03.125" rpa="false" schemaversion="3">
+<suite id="s1" name="Principal" source="C:\Users\joao_\Documents\RoboTron_Joao_Paulo_Compass\Sprint_5\Aulas_Demetrio\Dia07\principal.robot">
+<test id="s1-t1" name="Cenario: DELETE Excluir Produto 200" line="53">
+<kw name="Criar Sessao" library="usuarios_keywords">
+<kw name="Create Session">
+<arg>serverest</arg>
+<arg>https://serverest.dev</arg>
+<msg timestamp="20220623 17:01:03.178" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" starttime="20220623 17:01:03.177" endtime="20220623 17:01:03.178"/>
+</kw>
+<status status="FAIL" starttime="20220623 17:01:03.169" endtime="20220623 17:01:03.180"/>
+</kw>
+<kw name="Fazer Login e Armazenar Token" library="login_keywords">
+<status status="NOT RUN" starttime="20220623 17:01:03.209" endtime="20220623 17:01:03.209"/>
+</kw>
+<kw name="Criar Um Produto e Armazenar ID" library="produtos_keywords">
+<status status="NOT RUN" starttime="20220623 17:01:03.210" endtime="20220623 17:01:03.210"/>
+</kw>
+<kw name="DELETE Endpoint /produtos" library="produtos_keywords">
+<status status="NOT RUN" starttime="20220623 17:01:03.211" endtime="20220623 17:01:03.211"/>
+</kw>
+<kw name="Validar Status Code &quot;200&quot;" sourcename="Validar Status Code &quot;${statuscode}&quot;">
+<status status="NOT RUN" starttime="20220623 17:01:03.212" endtime="20220623 17:01:03.212"/>
+</kw>
+<tag>DELETEPRODUTO</tag>
+<status status="FAIL" starttime="20220623 17:01:03.167" endtime="20220623 17:01:03.214">No keyword with name 'Create Session' found.</status>
+</test>
+<doc>Arquivo simples para requisições HTTP</doc>
+<status status="FAIL" starttime="20220623 17:01:03.128" endtime="20220623 17:01:03.219"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">DELETEPRODUTO</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Principal">Principal</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220623 17:01:03.152" level="ERROR">Error in file 'C:\Users\joao_\Documents\RoboTron_Joao_Paulo_Compass\Sprint_5\Aulas_Demetrio\Dia07\usuarios_keywords.robot' on line 7: Setting variable '' failed: Invalid variable name ''.</msg>
+<msg timestamp="20220623 17:01:03.154" level="ERROR">Error in file 'C:\Users\joao_\Documents\RoboTron_Joao_Paulo_Compass\Sprint_5\Aulas_Demetrio\Dia07\usuarios_keywords.robot' on line 8: Setting variable '' failed: Invalid variable name ''.</msg>
+<msg timestamp="20220623 17:01:03.155" level="ERROR">Error in file 'C:\Users\joao_\Documents\RoboTron_Joao_Paulo_Compass\Sprint_5\Aulas_Demetrio\Dia07\usuarios_keywords.robot' on line 9: Setting variable '' failed: Invalid variable name ''.</msg>
+</errors>
+</robot>
