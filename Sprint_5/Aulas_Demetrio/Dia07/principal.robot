@@ -1,5 +1,6 @@
 * Settings *
 Documentation   Arquivo simples para requisições HTTP
+Library         RequestsLibrary 
 Resource        ./usuarios_keywords.robot
 Resource        ./login_keywords.robot
 Resource        ./produtos_keywords.robot
@@ -7,7 +8,6 @@ Resource        ./produtos_keywords.robot
 #SESSÃO PARA CRIAÇÃO DOS CENÁRIOS DE TESTE
 
 * Test Cases *
-
 Cenario: GET todos os usuarios 200
     [tags]      GET
     Criar Sessao
@@ -43,7 +43,8 @@ Cenario: POST Realizar Login 200
     Criar Sessao
     POST Endpoint /login
     Validar Status Code "200"
-Cenario: POST Criar Produtos 201
+
+Cenario: POST Criar Produto 201
     [tags]      POSTPRODUTO
     Criar Sessao
     Fazer Login e Armazenar Token
@@ -59,7 +60,6 @@ Cenario: DELETE Excluir Produto 200
     Validar Status Code "200"
 
 * Keywords *
-
 Validar Status Code "${statuscode}"
 
     Should Be True      ${response.status_code} == ${statuscode}
