@@ -4,7 +4,6 @@ Documentation               Keywords e Variaveis para ações do endpoint carrin
 * Variables *
 ${token_auth}               
 
-
 * Keywords *
 POST Endpoint /carrinhos
     &{token_auth}           Create Dictionary   Authorization=${token_auth}

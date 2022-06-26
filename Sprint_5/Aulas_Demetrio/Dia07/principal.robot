@@ -59,19 +59,13 @@ Cenario: DELETE Excluir Produto 200
     DELETE Endpoint /produtos
     Validar Status Code "200"
 
+Cenario: POST Criar Usuario De Massa Estatica 201
+    [tags]          POSTCRIARUSUARIOESTATICO
+    Criar Sessao
+    Criar Usuario Estatico Valido
+    Validar Status Code "201"
+
 * Keywords *
-Validar Status Code "${statuscode}"
+Criar Sessao
+    Create Session          serverest   https://serverest.dev
 
-    Should Be True      ${response.status_code} == ${statuscode}
-
-Validar Quantidade "${quantidade}"
-
-    Should Be Equal     ${response.json()["quantidade"]}    ${quantidade}
-
-Validar Se Mensagem Contem "${palavra}"
-
-    Should Contain      ${response.json()["message"]}         ${palavra}
-
-Printar Conteudo Response
-
-    Log To Console      Nome: ${response.json()["usuarios"][0]["nome"]}
