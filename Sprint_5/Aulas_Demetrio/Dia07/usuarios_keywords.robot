@@ -1,6 +1,6 @@
 * Settings *
 Documentation               Keywords e Variaveis para ações do endpoint de usuarios
-Resource                    ./cammon.robot
+Resource                    ./common.robot
 
 * Variables *
 ${nome_do_usuario}          joaooo paulo da costa barroso
@@ -13,6 +13,12 @@ Criar Sessao
 
 GET Endpoint /usuarios
     ${response}             GET on Session      serverest       /usuarios
+    Set Global Variable     ${response}
+
+GET Buscar Usuario 
+    ${response}             GET On Session      serverest       /usuarios/0uxuPY0cbmQhpEz1
+    ${id_usuario}           Set Variable        ${response.json()["_id"]}
+    Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
 POST Endpoint /usuarios
@@ -46,3 +52,11 @@ Criar Usuario Estatico Valido
     ${payload}                  Set Variable                        ${json["user_valido"]}
     Set Global Variable         ${payload}
     POST Endpoint /usuarios
+
+Criar Usuario Estatico Sem Senha
+    ${json}                     Importar JSON Estatico              json_usuario_ex.json
+    ${payload}                  Set Variable                        ${json["user_sem_senha"]}
+    Set Global Variable         ${payload}
+    
+Validar Ter Criado Usuario
+    Should Not Be Empty         ${response.json()["_id"]}

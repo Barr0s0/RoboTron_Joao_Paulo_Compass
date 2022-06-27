@@ -3,9 +3,20 @@ Documentation               Keywords e Variaveis para ações do endpoint de pro
 
 
 * Keywords *
+GET Buscar Produto 
+    ${response}             GET On Session      serverest       /produtos/BeeJh5lz3k6kSIzA
+    ${id_produto}           Set Variable        ${response.json()["_id"]}
+    Log to Console          Response: ${response.content}
+    Set Global Variable     ${response}
+
+GET Endpoint /produtos
+    ${response}             GET On Session      serverest       /produtos
+    Set Global Variable     ${response}
+    Log to Console          Response: ${response.content}
+
 POST Endpoint /produtos
     &{header}                   Create Dictionary       Authorization=${token_auth}
-    &{payload}                  Create Dictionary       nome=radiso     preco=3100      descricao=samsung       quantidade=200
+    &{payload}                  Create Dictionary       nome=radisooo     preco=3100      descricao=samsung       quantidade=2
     ${response}                 POST on Session         serverest       /produtos      data=&{payload}       headers=${header}
     Log to Console              Response: ${response.content}
     Set Global Variable         ${response}
